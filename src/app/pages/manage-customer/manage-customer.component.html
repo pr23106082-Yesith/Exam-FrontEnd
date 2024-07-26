@@ -18,21 +18,21 @@
     
         <div>
             <label for="txt-Student-name" class="form-label ">Customer Name : </label>
-            <input type="text" id="txt-Student-name" class="form-control ">
+            <input type="text" id="txt-Student-name" class="form-control " [(ngModel)]="CustomerOb.name">
         </div>
     
         <div>
             <label for="txt-Address" class="form-label ">City : </label>
-            <input type="text" id="txt-Address" class="form-control ">
+            <input type="text" id="txt-Address" class="form-control "  [(ngModel)]="CustomerOb.city">
         </div>
     
         <div>
             <label for="txt-Telnum" class="form-label ">Telephone Number : </label>
-            <input type="text" id="txt-Telnum" class="form-control ">
+            <input type="text" id="txt-Telnum" class="form-control "  [(ngModel)]="CustomerOb.contact">
         </div>
     
         <div>
-            <button class="btn btn-primary mt-3" id="btn-register"> Save Details</button>
+            <button class="btn btn-primary mt-3" id="btn-register" (click)="AddCustomer()"> Save Details</button>
         </div>
     
     </div>
