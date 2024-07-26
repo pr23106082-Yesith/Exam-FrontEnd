@@ -93,4 +93,9 @@ export class ViewAllCustomerComponent {
     });
   }
 
+
+
+SearchCustomer(){
+  
+}
 }
