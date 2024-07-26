@@ -1,1 +1,66 @@
-<p>view-all-customer works!</p>
+<div class="mt-5">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Customer Number</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of CustomerList">
+                <th scope="row">{{"EMP00"+customer.id}}</th>
+                <td>{{customer.name}}</td>
+                <td>{{customer.city}}</td>
+                <td>{{customer.contact}}</td>
+                <td><button><i class="bi bi-trash btn bg-danger-subtle" (click)="DeleteCustomer(customer)"></i></button>
+                </td>
+                <td><button><i class="bi bi-pencil-square btn bg-light" (click)="UpdateCustomer(customer)"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal"></i></button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Id :</label>
+                    <input type="text" class="form-control" id="recipient-name" disabled [(ngModel)]="CustomerObj.id">
+                </div>
+
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Name:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="CustomerObj.name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">City :</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="CustomerObj.city">
+                </div>
+
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Contact Number :</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="CustomerObj.contact">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="SaveUpadtes()">Update </button>
+            </div>
+        </div>
+    </div>
+</div>
